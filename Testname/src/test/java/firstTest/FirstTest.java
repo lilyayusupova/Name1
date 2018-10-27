@@ -29,7 +29,7 @@ public class FirstTest {
         WebElement loginButton = driver.findElement(By.xpath(".//*[@id='mailbox__auth__button']"));
         loginButton.click();
     }
-    @Test (groups={"Y"})
+    @Test (groups={"Y","Send","Delete","Language"})
     public void Send(){
         WebElement letterButton = driver.findElement(By.xpath("//*[@id='b-toolbar__left']"));
         letterButton.click();
