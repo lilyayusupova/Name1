@@ -3,6 +3,8 @@ package firstTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
@@ -13,7 +15,7 @@ public class FirstTest {
     @BeforeClass
     public void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Лилия\\Desktop\\Test\\chromedriver_win32");
-        WebDriver driver = new Chromedriver();
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://mail.ru/");
@@ -39,10 +41,19 @@ public class FirstTest {
         sendButton.click();
         WebElement mailpage= driver.findElement(By.xpath("//*[@id='b-nav_folders'"));
         mailpage.click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
     public void Delete(){}
     public void Language(){
-
+        WebElement LangButton = driver.findElement(By.xpath("//*[@id='FooterLangSwitcher']"));
+        LangButton.click();
+        WebElement Button1 = driver.findElement(By.xpath("//*[@id='langSwitcher']"));
+        Button1.click();
+        Select dropdown = new Select (driver.findElement(By.xpath("//*[@id='langSwitcher']"));
+        dropdown.selectByVisibleText("English");
+        WebElement Ok =driver.findElement(By.xpath("//div[@id='MailRuConfirm']"));
+        Ok.click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
     @AfterGroups
     public void userLogout (){
@@ -54,4 +65,3 @@ public class FirstTest {
         driver.quit();
     }
 }
-
