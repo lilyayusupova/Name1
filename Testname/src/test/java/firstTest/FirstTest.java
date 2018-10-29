@@ -39,11 +39,25 @@ public class FirstTest {
         textField.sendKeys("Hello,World!");
         WebElement sendButton = driver.findElement(By.xpath("//*[@id='b-toolbar__right']"));
         sendButton.click();
-        WebElement mailpage= driver.findElement(By.xpath("//*[@id='b-nav_folders'"));
+        WebElement mailpage= driver.findElement(By.xpath("//*[@id='b-nav_folders']"));
         mailpage.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
-    public void Delete(){}
+    public void Delete(){
+        for ...
+        WebElement mail = driver.findElement((By.xpath("//*[@id='b-letters']"));
+        mail.getAttribute('Lilya Yusupova');
+        if (mail=true){
+            WebElement box = driver.findElement(By.xpath("//*[@id='b-checkbox_box']"));
+            box.click();
+        }
+        else{
+
+        }
+        WebElement del=driver.findElement(By.xpath("//*[@id='b-toolbar__right']"));
+        del.click();
+
+    }
     public void Language(){
         WebElement LangButton = driver.findElement(By.xpath("//*[@id='FooterLangSwitcher']"));
         LangButton.click();
