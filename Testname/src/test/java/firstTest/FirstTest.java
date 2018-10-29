@@ -6,7 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
+import sun.plugin2.message.Message;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class FirstTest {
@@ -44,19 +48,18 @@ public class FirstTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
     public void Delete(){
-        for ...
-        WebElement mail = driver.findElement((By.xpath("//*[@id='b-letters']"));
-        mail.getAttribute('Lilya Yusupova');
-        if (mail=true){
-            WebElement box = driver.findElement(By.xpath("//*[@id='b-checkbox_box']"));
-            box.click();
-        }
-        else{
-
+        ArrayList<String> Message  = new ArrayList<>();
+        List Message=driver.findElements(By.xpath("//div[@id='b-letters']"));
+        for (int i=0; i< Message.size(); i++) {
+            Message(i)=Message.get(i);
+            Message(i).getAttribute("value");
+            if ( Message(i).contains("Lilya Yusupova"){
+                WebElement box = driver.findElement(By.xpath("//*[@id='b-checkbox_box']"));
+                box.click();
+            }
         }
         WebElement del=driver.findElement(By.xpath("//*[@id='b-toolbar__right']"));
         del.click();
-
     }
     public void Language(){
         WebElement LangButton = driver.findElement(By.xpath("//*[@id='FooterLangSwitcher']"));
@@ -79,3 +82,4 @@ public class FirstTest {
         driver.quit();
     }
 }
+
